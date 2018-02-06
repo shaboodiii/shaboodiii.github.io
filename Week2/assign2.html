@@ -5,19 +5,23 @@
 		<meta charset="utf-8">
 		<link rel="stylesheet" type="text/css" src="style.css">
 		<script type="text/javascript" src="../d3_files/d3.js"></script>
-		<title>Week exercises 2</title>
+		<title>Part 2</title>
 	</head>
 	<body>
 		<h1>Part 2: A couple of small exercises</h1>
 		<script type="text/javascript">
 			var dataset;
+
 			d3.csv("data.csv", function(data){
 				dataset = data;
+
+				d3.select("body").selectAll("p").data(dataset).enter().append("p").text(function(d){
+					return d;
+				});
+
 			});
 
-			d3.select("body").selectAll("p").data(dataset).enter().append("p").text(function(d){
-				return d;
-			});
+			
 		</script>
 
 	</body>
