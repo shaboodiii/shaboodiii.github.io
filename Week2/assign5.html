@@ -15,9 +15,9 @@
 
 			var rowConverter = function(d) {
 				return {
-					number: parseInt(d.number),
+					number: parseFloat(d.number),
 					name: d.name,
-					months: parseInt(d.months)
+					months: parseFloat(d.months)
 				};
 			}
 
@@ -25,10 +25,6 @@
 				dataset = data;
 				console.log(dataset);
 			});
-				
-
 		</script>
-
-
 	</body>
 </html>
