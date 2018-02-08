@@ -12,7 +12,7 @@
 		<h2>Check console</h2>
 		<script type="text/javascript">
 			var dataset;
-
+			var months;
 			var rowConverter = function(d) {
 				return {
 					number: parseFloat(d.number),
@@ -23,7 +23,7 @@
 
 			d3.csv("president.csv", rowConverter, function(data){
 				dataset = data;
-				console.log(dataset);
+				months = data[2];
 				console.log(months);
 			});
 		</script>
