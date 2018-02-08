@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" src="style.css">
+		<script type="text/javascript" src="../d3_files/d3.js"></script>
+		<title>Week 2 exercises</title>
+	</head>
+	<body>
+		<h1>Part 5: Finally! Let's create some visualizations</h1>
+		<h2>Check console</h2>
+		<script type="text/javascript">
+			var dataset;
+
+			var rowConverter = function(d) {
+				return {
+					number: parseInt(d.number),
+					name: d.name,
+					months: parseInt(d.months)
+				};
+			}
+
+			d3.csv("presidents.csv", rowConverter, function(data){
+				dataset = data;
+				console.log(dataset);
+
+				
+
+		</script>
+
+
+	</body>
+</html>
