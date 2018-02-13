@@ -14,8 +14,8 @@
 		<div style="height: 75px"></div>
 
 
-
 		<script type="text/javascript">
+			/*
 			var dataset = [25, 7, 5, 26, 11];
 			var dataset2 = [ 25, 7, 5, 26, 11, 8, 25, 14, 23, 19, 14, 11, 22, 29, 11, 13, 12, 17, 18, 10, 24, 18, 25, 9, 3 ];
 			var w = 500;
@@ -29,39 +29,28 @@
 			.style("height", function(d){
 				var barHeight = d * 5;
 				return barHeight + "px";
-			});
-
-			/*var rowConverter = function(d) {
-				return {
-					number: parseFloat(d.number),
-					name: d.name,
-					months: parseFloat(d.months)
-				};
-			}
-
-			d3.csv("president.csv", rowConverter, function(data){
-				dataset = data;
-				console.log(dataset);
-			
-				var svg = d3.select("body")
-							.append("svg")
-							.attr("width", w)
-							.attr("height", h);
-
-				svg.selectAll("circle")
-						.data(dataset.months)
-						.enter()
-						.append("circle")
-						.attr("cx", function(d){
-							return d[2];
-						})
-						.attr("cy", function(d){
-							return 0;
-						})
-						.attr("r", 5);
-
 			});*/
 
+			var w = 500;
+			var h = 50;
+
+			var svg = d3.select("body")
+				.append("svg")
+				.attr("width", w)
+				.attr("height", h);
+
+			var circles = svg.selectAll("div")
+							 .data(dataset)
+							 .enter()
+							 .append("div");
+
+			circles.attr("cx", function(d, i){
+				return (i * 50) + 25;
+			})
+			.attr("cy", h/2)
+			.attr("r", function(d){
+				return d;
+			});
 			
 		</script>
 	</body>
