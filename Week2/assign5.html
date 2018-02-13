@@ -12,7 +12,8 @@
 		<h2>Check console</h2>
 		<script type="text/javascript">
 			var dataset;
-			var months;
+			var w = 500;
+			var h = 500;
 			var rowConverter = function(d) {
 				return {
 					number: parseFloat(d.number),
@@ -23,9 +24,25 @@
 
 			d3.csv("president.csv", rowConverter, function(data){
 				dataset = data;
-				months = data[2];
-				console.log(months);
+				console.log(dataset);
 			});
+
+			var svg = d3.select("body")
+						.append("svg")
+						.attr("width", w)
+						.attr("height", h);
+
+			svg.selectAll("circle")
+					.data(dataset)
+					.enter()
+					.append("circle")
+					.attr("cx", function(d){
+						return d[2];
+					})
+					.attr("cy", function(d){
+						return 0;
+					})
+					.attr("r", 5);
 		</script>
 	</body>
 </html>
