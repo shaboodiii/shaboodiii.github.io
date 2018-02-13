@@ -11,10 +11,17 @@
 		<h1>Part 5: Finally! Let's create some visualizations</h1>
 		<h2>Check console</h2>
 		<script type="text/javascript">
-			var dataset;
+			var dataset = [5, 10, 15, 20, 25];
 			var w = 500;
-			var h = 500;
-			var rowConverter = function(d) {
+			var h = 100;
+
+			d3.select("body").selectAll("div")
+			.data(dataset)
+			.enter()
+			.append("div")
+			.attr("class", "bar");
+
+			/*var rowConverter = function(d) {
 				return {
 					number: parseFloat(d.number),
 					name: d.name,
@@ -43,7 +50,7 @@
 						})
 						.attr("r", 5);
 
-			});
+			});*/
 
 			
 		</script>
