@@ -24,7 +24,10 @@
 			.data(dataset)
 			.enter()
 			.append("div")
-			.attr("class", "bar");
+			.attr("class", "bar")
+			.style("height", function(d){
+				return d + "px";
+			});
 
 			/*var rowConverter = function(d) {
 				return {
