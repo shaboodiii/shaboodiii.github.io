@@ -13,6 +13,7 @@
 		<h2>Check console</h2>
 		<div style="height: 75px"></div>
 		<div style="height: 75px"></div>
+		<circle></circle>
 
 
 		<script type="text/javascript">
@@ -41,10 +42,10 @@
 				.attr("width", w)
 				.attr("height", h);
 
-			var circles = svg.selectAll("div")
+			var circles = svg.selectAll("circles")
 							 .data(dataset)
 							 .enter()
-							 .append("div");
+							 .append("circles");
 
 			circles.attr("cx", function(d, i){
 				return (i * 50) + 25;
