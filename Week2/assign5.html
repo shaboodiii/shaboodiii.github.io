@@ -12,6 +12,7 @@
 		<h1>Part 5: Finally! Let's create some visualizations</h1>
 		<h2>Check console</h2>
 		<div style="height: 75px"></div>
+		<svg></svg>
 
 		<script type="text/javascript">
 			var dataset = [5, 10, 15, 20, 25];
@@ -22,7 +23,7 @@
 			var h = 100;
 
 			d3.select("body").selectAll("div")
-			.data(dataset2)
+			.data(dataset)
 			.enter()
 			.append("div")
 			.attr("class", "bar")
@@ -50,12 +51,7 @@
 			.attr("cy", h/2)
 			.attr("r", function(d){
 				return d;
-			})
-			/*.attr("fill", "yellow")
-			.attr("stroke", "orange")
-			.attr("stroke-width", function(d){
-				return d/2;
-			})*/;
+			});
 			
 		</script>
 	</body>
