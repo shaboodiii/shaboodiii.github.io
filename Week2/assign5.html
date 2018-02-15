@@ -12,10 +12,9 @@
 		<h1>Part 5: Finally! Let's create some visualizations</h1>
 		<h2>Check console</h2>
 		<div style="height: 75px"></div>
-		<svg></svg>
 
 		<script type="text/javascript">
-			var dataset = [5, 10, 15, 20, 25];
+			
 			/*
 			var dataset = [25, 7, 5, 26, 11];
 			var dataset = [ 25, 7, 5, 26, 11, 8, 25, 14, 23, 19, 14, 11, 22, 29, 11, 13, 12, 17, 18, 10, 24, 18, 25, 9, 3 ];
@@ -40,18 +39,21 @@
 				.attr("width", w)
 				.attr("height", h);
 
-			var circles = svg.selectAll("circles")
-							 .data(dataset)
-							 .enter()
-							 .append("circles");
+			var dataset = [5, 10, 15, 20, 25];
 
-			circles.attr("cx", function(d, i){
-				return (i * 50) + 25;
+			var circles = svg.selectAll("circle")
+								.data(dataset)
+								.enter()
+								.append("circle");
+
+			circles.attr("cx", function(d, i) {
+				return(i * 50) + 25;
 			})
 			.attr("cy", h/2)
-			.attr("r", function(d){
+			.attr("r", function(d) {
 				return d;
 			});
+
 			
 		</script>
 	</body>
